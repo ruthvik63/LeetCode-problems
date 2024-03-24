@@ -1,0 +1,16 @@
+def longest_prefix(strs):
+    if not strs:
+        return ""
+    min_len=min(strs,key=len)
+    prefix=''
+    
+    for i,char in enumerate(min_len):
+        for j in strs:
+            if j[i]!=char:
+                return prefix
+        prefix+=char
+    return prefix
+
+s1=["flower", "flow", "flight"]
+a=longest_prefix(s1)
+print(a)
